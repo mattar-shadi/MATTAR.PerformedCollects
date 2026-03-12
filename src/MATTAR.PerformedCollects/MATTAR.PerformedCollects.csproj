@@ -10,6 +10,7 @@
     <Version>1.0.0</Version>
     <Authors>mattar-shadi</Authors>
     <Description>High-performance native collections for .NET: Cuckoo hash table, perfect hash table, and van Emde Boas tree.</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 
 </Project>
