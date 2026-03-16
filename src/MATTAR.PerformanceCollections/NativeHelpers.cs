@@ -7,20 +7,20 @@ internal static unsafe class NativeHelpers
 {
     private static readonly ThreadLocal<Random> _threadRandom = new(() => new Random());
 
-    public static void* AlignedAlloc(nuint size, nuint alignment = 64)
+    internal static void* AlignedAlloc(nuint size, nuint alignment = 64)
         => NativeMemory.AlignedAlloc(size, alignment);
 
-    public static void AlignedFree(void* ptr)
+    internal static void AlignedFree(void* ptr)
         => NativeMemory.AlignedFree(ptr);
 
-    public static void Clear(void* ptr, nuint size)
+    internal static void Clear(void* ptr, nuint size)
         => NativeMemory.Clear(ptr, size);
 
-    public static ulong RandomULong() => (ulong)_threadRandom.Value!.NextInt64();
+    internal static ulong RandomULong() => (ulong)_threadRandom.Value!.NextInt64();
 
-    public static ulong RandomOddULong() => ((ulong)_threadRandom.Value!.NextInt64() << 1) | 1UL;
+    internal static ulong RandomOddULong() => ((ulong)_threadRandom.Value!.NextInt64() << 1) | 1UL;
 
-    public static int NextPowerOfTwo(int n)
+    internal static int NextPowerOfTwo(int n)
     {
         if (n <= 0) return 1;
         n--;
@@ -32,5 +32,5 @@ internal static unsafe class NativeHelpers
         return n + 1;
     }
 
-    public static int Log2(uint value) => BitOperations.Log2(value);
+    internal static int Log2(uint value) => BitOperations.Log2(value);
 }
