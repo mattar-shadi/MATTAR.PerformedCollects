@@ -2,4 +2,7 @@
   <Folder Name="/src/">
     <Project Path="src/MATTAR.PerformanceCollections/MATTAR.PerformanceCollections.csproj" />
   </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/MATTAR.PerformanceCollections.Tests/MATTAR.PerformanceCollections.Tests.csproj" />
+  </Folder>
 </Solution>
