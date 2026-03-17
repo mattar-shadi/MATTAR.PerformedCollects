@@ -41,6 +41,19 @@ public sealed class SafeVanEmdeBoas : IEnumerable<int>, IDisposable
         _tree = VanEmdeBoas.Create(universeBits);
     }
 
+    /// <summary>
+    /// Takes ownership of an existing unmanaged <see cref="VanEmdeBoas"/> tree.
+    /// The tree will be destroyed when this instance is disposed.
+    /// </summary>
+    /// <param name="tree">Pointer to an allocated <see cref="VanEmdeBoas"/>.</param>
+    /// <exception cref="ArgumentNullException"><paramref name="tree"/> is <see langword="null"/>.</exception>
+    internal unsafe SafeVanEmdeBoas(VanEmdeBoas* tree)
+    {
+        if (tree == null)
+            throw new ArgumentNullException(nameof(tree));
+        _tree = tree;
+    }
+
     ~SafeVanEmdeBoas() => Dispose(false);
 
     // -----------------------------------------------------------------------
