@@ -20,4 +20,11 @@
     </AssemblyAttribute>
   </ItemGroup>
 
+  <!-- Expose internals to the benchmark assembly in all configurations (benchmarks run in Release). -->
+  <ItemGroup>
+    <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
+      <_Parameter1>MATTAR.PerformanceCollections.Benchmarks</_Parameter1>
+    </AssemblyAttribute>
+  </ItemGroup>
+
 </Project>

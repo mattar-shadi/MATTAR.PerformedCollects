@@ -140,6 +140,26 @@ unsafe
 
 ---
 
+## 📊 Benchmarks
+
+Des benchmarks comparatifs sont disponibles dans `benchmarks/` et mesurent les performances de `CuckooHashTable` et `PerfectHashTable` face aux collections .NET standard (`Dictionary`, `HashSet`).
+
+Lancement rapide :
+
+```bash
+dotnet run -c Release --project benchmarks/MATTAR.PerformanceCollections.Benchmarks
+```
+
+Filtrer par collection :
+
+```bash
+dotnet run -c Release --project benchmarks/MATTAR.PerformanceCollections.Benchmarks -- --filter *CuckooVsDictionary*
+```
+
+Voir [BENCHMARKS.md](BENCHMARKS.md) pour la documentation complète (scénarios, paramètres, interprétation des résultats).
+
+---
+
 ## 📌 Feuille de route
 
 - [x] Table de hachage de Cuckoo
@@ -147,7 +167,7 @@ unsafe
 - [x] Arbre de van Emde Boas
 - [x] Publication NuGet officielle
 - [x] Mode `PerfectTable` pour le vEB statique
-- [ ] Benchmarks (BenchmarkDotNet)
+- [x] Benchmarks (BenchmarkDotNet)
 - [ ] Tests unitaires complets
 
 ---
